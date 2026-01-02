@@ -26,6 +26,7 @@
             line-height: 1.6;
             color: var(--dark-color);
             background-color: var(--light-color);
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -56,6 +57,12 @@
             text-decoration: none;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.7rem 1.5rem;
@@ -63,12 +70,25 @@
             color: var(--light-color);
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
         }
 
         .btn:hover {
             background-color: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--light-color);
         }
 
         #hero {
@@ -205,14 +225,12 @@
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeIn 0.6s ease-out forwards;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .feature-card, #for-coaches .feature-card {
@@ -235,7 +253,10 @@
     <header>
         <div class="container">
             <a href="#" class="logo">MoveCare</a>
-            <a href="#hero" class="btn">Scarica l'App</a>
+            <div class="header-actions">
+                <a href="#" class="btn btn-secondary">Login</a>
+                <a href="#hero" class="btn">Scarica l'App</a>
+            </div>
         </div>
     </header>
 
@@ -320,7 +341,7 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-visible');
+                    entry.target.classList.add('visible');
                 }
             });
         });
