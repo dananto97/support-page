@@ -1,0 +1,448 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.logo .move {
+    color: #8e44ad; /* Violaceo */
+}
+
+.logo .care {
+    color: #1abc9c; /* Verde acqua */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+/* Fix per immagini dentro i pulsanti (es. Google Store) */
+.btn img {
+    vertical-align: middle;
+    max-height: 24px;
+    width: auto;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding-top: 70px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Tab Section Styles */
+#main-tabs {
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding-top: 2rem;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeInContent 0.5s ease forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Layout Carosello Condiviso */
+.carousel-layout {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-layout .feature-card {
+    min-width: 300px;
+    scroll-snap-align: center;
+}
+
+.feature-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.feature-card.active {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Area Dettagli (Screenshots) */
+.detail-panel {
+    display: none;
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 1rem;
+    border: 1px solid #eee;
+    animation: fadeInPanel 0.4s ease forwards;
+}
+
+.detail-panel.active {
+    display: block;
+}
+
+@keyframes fadeInPanel {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.screenshot-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .social-links {
+    margin-bottom: 1rem;
+}
+
+footer .social-links a {
+    color: var(--light-color);
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+footer .social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
+footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .header-actions {
+        display: none;
+    }
+}
+
+/* Stile per pagine di contenuto (Privacy, Termini) */
+.page-content {
+    padding-top: 120px; /* Spazio per l'header fisso */
+    padding-bottom: 4rem;
+    min-height: 60vh;
+}
+
+.page-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+.page-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.page-content p, .page-content li {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Centra verticalmente nello spazio disponibile */
+}
+
+.auth-card {
+    background: var(--light-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.auth-btn:hover {
+    background-color: #0056b3;
+}
+
+.auth-links {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: none; /* Nascosto di default */
+    background: #ffe6e6;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: none;
+}

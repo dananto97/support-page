@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi - MoveCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="MoveCare Logo">
+            <div class="logo-text">
+                <span class="move">Move</span><span class="care">Care</span>
+            </div>
+        </a>
+        <div class="header-actions">
+            <!-- Pulsante Login rimosso qui perché siamo già nella pagina login -->
+            <a href="index.html" class="btn">Torna alla Home</a>
+        </div>
+    </div>
+</header>
+
+<main class="page-content">
+    <div class="container auth-container">
+
+        <!-- Card di Login -->
+        <div class="auth-card" id="login-card">
+            <h2>Bentornato</h2>
+            <div id="login-error" class="error-message"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="nome@esempio.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="La tua password">
+                </div>
+                <button type="submit" class="auth-btn">Accedi</button>
+            </form>
+
+            <div class="auth-links">
+                <a id="show-reset">Password dimenticata?</a>
+            </div>
+        </div>
+
+        <!-- Questo è il blocco che appare quando clicchi "Password dimenticata" -->
+        <div class="auth-card" id="reset-card" style="display: none;">
+            <h2>Recupera Password</h2>
+            <!-- ... testo descrittivo ... -->
+            <form id="reset-form">
+                <div class="form-group">
+                    <label for="reset-email">Email</label>
+                    <input type="email" id="reset-email" required placeholder="nome@esempio.com">
+                </div>
+                <button type="submit" class="auth-btn">Invia Link</button>
+            </form>
+
+            <div class="auth-links">
+                <a id="show-login">Torna al Login</a>
+            </div>
+        </div>
+        
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<!-- Firebase SDKs -->
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>

@@ -3,353 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoveCare - Il Tuo Coach Personale</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        :root {
-            --primary-color: #007BFF; /* Un blu energico */
-            --secondary-color: #4A90E2;
-            --dark-color: #222831;
-            --light-color: #FFFFFF;
-            --gray-color: #F7F7F7;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            background: var(--light-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            background: var(--primary-color);
-            color: var(--light-color);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: var(--light-color);
-        }
-
-        #hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 0;
-            background-color: var(--gray-color);
-        }
-
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #555;
-        }
-
-        .store-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .store-btn {
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-        
-        .store-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .store-btn img {
-            height: 50px;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        #features .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--light-color);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .feature-card .icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        #for-coaches {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-        }
-
-        #for-coaches .section-title {
-            color: var(--light-color);
-        }
-
-        #for-coaches p {
-            text-align: center;
-            max-width: 700px;
-            margin: -2rem auto 3rem auto;
-            color: #ccc;
-        }
-
-        footer {
-            background: var(--dark-color);
-            color: #aaa;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        footer .social-links a {
-            color: var(--light-color);
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        footer p {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        footer a {
-            color: #aaa;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animazioni */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-card, #for-coaches .feature-card {
-            animation-delay: calc(0.1s * var(--i));
-        }
-
-        @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-    </style>
+    <title>MoveCare - La tua salute, la nostra priorità</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="MoveCare Logo">
+            <div class="logo-text">
+                <span class="move">Move</span><span class="care">Care</span>
+            </div>
+        </a>
+        <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="#hero" class="btn">Scarica l'App</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="hero">
         <div class="container">
-            <a href="#" class="logo">MoveCare</a>
-            <div class="header-actions">
-                <a href="#" class="btn btn-secondary">Login</a>
-                <a href="#hero" class="btn">Scarica l'App</a>
+            <div class="hero-content fade-in">
+                <h1>Il tuo benessere, <br> a portata di mano</h1>
+                <p>La piattaforma completa per coach e clienti. Allenati meglio, gestisci il tuo business e raggiungi i tuoi obiettivi.</p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1 class="fade-in">Il tuo percorso di fitness, guidato da esperti.</h1>
-                <p class="fade-in" style="animation-delay: 0.2s;">
-                    Connettiti con coach professionisti e ricevi piani di allenamento e nutrizione 100% personalizzati per raggiungere i tuoi obiettivi.
-                </p>
-                <div class="store-buttons fade-in" style="animation-delay: 0.4s;">
-                    <!-- Sostituisci con i tuoi link reali -->
-                    <a href="#" class="store-btn"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
-                    <a href="#" class="store-btn"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png" alt="Get it on Google Play"></a>
-                </div>
+    <section id="main-tabs">
+        <div class="container">
+            <!-- Tab Navigation -->
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-target="client">Sei un Cliente?</button>
+                <button class="tab-btn" data-target="coach">Sei un Coach?</button>
             </div>
-        </section>
 
-        <section id="features">
-            <div class="container">
+            <!-- Tab Content: Cliente -->
+            <div id="client" class="tab-content active">
                 <h2 class="section-title">Tutto ciò di cui hai bisogno</h2>
-                <div class="features-grid">
-                    <div class="feature-card fade-in" style="--i: 1;">
+
+                <!-- Carosello Cliente -->
+                <div class="carousel-layout" id="client-carousel">
+                    <div class="feature-card fade-in" style="--i: 1;" data-detail="detail-plans">
                         <div class="icon">🏋️</div>
                         <h3>Piani su Misura</h3>
                         <p>Ricevi schede di allenamento e piani nutrizionali creati apposta per te dal tuo coach.</p>
                     </div>
-                    <div class="feature-card fade-in" style="--i: 2;">
+                    <div class="feature-card fade-in" style="--i: 2;" data-detail="detail-chat">
                         <div class="icon">💬</div>
                         <h3>Chat Diretta</h3>
                         <p>Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale per non sbagliare mai.</p>
                     </div>
-                    <div class="feature-card fade-in" style="--i: 3;">
+                    <div class="feature-card fade-in" style="--i: 3;" data-detail="detail-progress">
                         <div class="icon">📈</div>
                         <h3>Monitoraggio Progressi</h3>
                         <p>Invia check-in periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="for-coaches">
-            <div class="container">
-                <h2 class="section-title">Sei un Coach?</h2>
-                <p>Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand, tutto da un'unica piattaforma.</p>
-                <div class="features-grid">
-                    <div class="feature-card fade-in" style="--i: 1;">
+                <!-- Area Dettagli Espandibile Cliente -->
+                <div id="detail-plans" class="detail-panel">
+                    <h3>Dettagli Piani su Misura</h3>
+                    <p>Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Scheda Allenamento</div>
+                </div>
+                <div id="detail-chat" class="detail-panel">
+                    <h3>Chat Integrata</h3>
+                    <p>Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Chat Coach</div>
+                </div>
+                <div id="detail-progress" class="detail-panel">
+                    <h3>I tuoi Progressi</h3>
+                    <p>Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Grafici</div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Coach -->
+            <div id="coach" class="tab-content">
+                <h2 class="section-title">Strumenti per Coach</h2>
+                <p class="section-description">Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand.</p>
+
+                <!-- Carosello Coach -->
+                <div class="carousel-layout" id="coach-carousel">
+                    <div class="feature-card fade-in" style="--i: 1;" data-detail="detail-coach-clients">
                         <div class="icon">👥</div>
                         <h3>Gestisci i Clienti</h3>
                         <p>Centralizza la gestione dei clienti, assegna piani e monitora i progressi da una dashboard intuitiva.</p>
                     </div>
-                    <div class="feature-card fade-in" style="--i: 2;">
+                    <div class="feature-card fade-in" style="--i: 2;" data-detail="detail-coach-plans">
                         <div class="icon">✍️</div>
                         <h3>Crea Piani e Contenuti</h3>
                         <p>Costruisci la tua libreria di esercizi e componi piani di allenamento e nutrizionali in modo semplice e veloce.</p>
                     </div>
-                    <div class="feature-card fade-in" style="--i: 3;">
+                    <div class="feature-card fade-in" style="--i: 3;" data-detail="detail-coach-brand">
                         <div class="icon">🚀</div>
                         <h3>Fai Crescere il Tuo Brand</h3>
                         <p>Condividi la tua esperienza attraverso articoli, video e merchandise per raggiungere nuovi clienti.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <!-- Sostituisci con i tuoi link social -->
-                <a href="#" aria-label="Instagram">IG</a>
-                <a href="#" aria-label="Facebook">FB</a>
-                <a href="#" aria-label="TikTok">TT</a>
+                <!-- Area Dettagli Espandibile Coach -->
+                <div id="detail-coach-clients" class="detail-panel">
+                    <h3>Dashboard Clienti</h3>
+                    <p>Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Lista Clienti</div>
+                </div>
+                <div id="detail-coach-plans" class="detail-panel">
+                    <h3>Editor Allenamenti</h3>
+                    <p>Crea schede in pochi minuti trascinando gli esercizi dal database.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Editor Schede</div>
+                </div>
+                <div id="detail-coach-brand" class="detail-panel">
+                    <h3>Strumenti di Marketing</h3>
+                    <p>Analisi delle performance del tuo profilo e strumenti di condivisione social.</p>
+                    <div class="screenshot-placeholder">Screenshot App: Analytics</div>
+                </div>
             </div>
-            <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
+
         </div>
-    </footer>
+    </section>
+</main>
 
-    <script>
-        // Script per le animazioni "fade-in" allo scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+        </div>
+        <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
+    </div>
+</footer>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+<script>
+    // Intersection Observer per animazioni allo scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    </script>
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+
+    // Script per i Tab
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    const mainTabsSection = document.getElementById('main-tabs');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.target).classList.add('active');
+        });
+    });
+
+    // Script per gestire i click sulle card (Cliente e Coach)
+    const allFeatureCards = document.querySelectorAll('.feature-card[data-detail]');
+    const detailPanels = document.querySelectorAll('.detail-panel');
+
+    allFeatureCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Trova il contenitore padre (il carosello specifico)
+            const container = card.closest('.carousel-layout');
+
+            // Rimuovi active solo dalle card nello stesso carosello
+            container.querySelectorAll('.feature-card').forEach(c => c.classList.remove('active'));
+
+            // Aggiungi active alla card cliccata
+            card.classList.add('active');
+
+            // Nascondi tutti i pannelli
+            detailPanels.forEach(p => p.classList.remove('active'));
+
+            // Mostra il pannello corrispondente
+            const detailId = card.getAttribute('data-detail');
+            const panel = document.getElementById(detailId);
+            if(panel) panel.classList.add('active');
+        });
+    });
+</script>
 
 </body>
 </html>
