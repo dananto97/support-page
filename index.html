@@ -17,6 +17,12 @@
             </div>
         </a>
         <div class="header-actions">
+                <!-- Selettore Lingua -->
+                <select id="lang-selector" class="lang-select">
+                    <option value="it">🇮🇹 IT</option>
+                    <option value="en">🇬🇧 EN</option>
+                </select>
+
                 <!-- Pulsante Login (Visibile se sloggato) -->
                 <a href="login.html" id="login-btn" class="btn btn-secondary">Login</a>
                 
@@ -73,18 +79,18 @@
 
                 <!-- Area Dettagli Espandibile Cliente -->
                 <div id="detail-plans" class="detail-panel">
-                    <h3>Dettagli Piani su Misura</h3>
-                    <p>Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.</p>
+                        <h3 data-i18n="det_plans_title">Dettagli Piani su Misura</h3>
+                        <p data-i18n="det_plans_desc">Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.</p>
                     <div class="screenshot-placeholder">Screenshot App: Scheda Allenamento</div>
                 </div>
                 <div id="detail-chat" class="detail-panel">
-                    <h3>Chat Integrata</h3>
-                    <p>Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.</p>
+                        <h3 data-i18n="det_chat_title">Chat Integrata</h3>
+                        <p data-i18n="det_chat_desc">Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.</p>
                     <div class="screenshot-placeholder">Screenshot App: Chat Coach</div>
                 </div>
                 <div id="detail-progress" class="detail-panel">
-                    <h3>I tuoi Progressi</h3>
-                    <p>Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.</p>
+                        <h3 data-i18n="det_prog_title">I tuoi Progressi</h3>
+                        <p data-i18n="det_prog_desc">Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.</p>
                     <div class="screenshot-placeholder">Screenshot App: Grafici</div>
                 </div>
             </div>
@@ -115,18 +121,18 @@
 
                 <!-- Area Dettagli Espandibile Coach -->
                 <div id="detail-coach-clients" class="detail-panel">
-                    <h3>Dashboard Clienti</h3>
-                    <p>Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.</p>
+                        <h3 data-i18n="det_c_clients_title">Dashboard Clienti</h3>
+                        <p data-i18n="det_c_clients_desc">Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.</p>
                     <div class="screenshot-placeholder">Screenshot App: Lista Clienti</div>
                 </div>
                 <div id="detail-coach-plans" class="detail-panel">
-                    <h3>Editor Allenamenti</h3>
-                    <p>Crea schede in pochi minuti trascinando gli esercizi dal database.</p>
+                        <h3 data-i18n="det_c_plans_title">Editor Allenamenti</h3>
+                        <p data-i18n="det_c_plans_desc">Crea schede in pochi minuti trascinando gli esercizi dal database.</p>
                     <div class="screenshot-placeholder">Screenshot App: Editor Schede</div>
                 </div>
                 <div id="detail-coach-brand" class="detail-panel">
-                    <h3>Strumenti di Marketing</h3>
-                    <p>Analisi delle performance del tuo profilo e strumenti di condivisione social.</p>
+                        <h3 data-i18n="det_c_brand_title">Strumenti di Marketing</h3>
+                        <p data-i18n="det_c_brand_desc">Analisi delle performance del tuo profilo e strumenti di condivisione social.</p>
                     <div class="screenshot-placeholder">Screenshot App: Analytics</div>
                 </div>
             </div>
@@ -208,6 +214,10 @@
 
     <!-- Firebase Auth Logic (Globale) -->
     <script type="module" src="auth.js"></script>
+    <!-- Translation Logic -->
+    <script src="translations.js"></script>
 
 </body>
+
+
 </html>

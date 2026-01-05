@@ -22,6 +22,23 @@ const translations = {
         feat_create_desc: "Costruisci la tua libreria di esercizi e componi piani in modo semplice.",
         feat_brand: "Fai Crescere il Tuo Brand",
         feat_brand_desc: "Condividi la tua esperienza attraverso articoli e video per raggiungere nuovi clienti.",
+        
+        // DETTAGLI INDEX (CLIENTE)
+        det_plans_title: "Dettagli Piani su Misura",
+        det_plans_desc: "Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.",
+        det_chat_title: "Chat Integrata",
+        det_chat_desc: "Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.",
+        det_prog_title: "I tuoi Progressi",
+        det_prog_desc: "Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.",
+
+        // DETTAGLI INDEX (COACH)
+        det_c_clients_title: "Dashboard Clienti",
+        det_c_clients_desc: "Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.",
+        det_c_plans_title: "Editor Allenamenti",
+        det_c_plans_desc: "Crea schede in pochi minuti trascinando gli esercizi dal database.",
+        det_c_brand_title: "Strumenti di Marketing",
+        det_c_brand_desc: "Analisi delle performance del tuo profilo e strumenti di condivisione social.",
+
         footer_rights: "© 2024 MoveCare. Tutti i diritti riservati.",
         footer_privacy: "Privacy Policy",
         footer_terms: "Termini di Servizio",
@@ -48,13 +65,12 @@ const translations = {
 
         // PRIVACY POLICY
         privacy_h1: "Privacy Policy",
-        privacy_update: "Ultimo aggiornamento: 02 Gennaio 2025",
+        privacy_update: "Ultimo aggiornamento: 05 Gennaio 2025",
         privacy_1_title: "1. Introduzione",
         privacy_1_text: "Benvenuto su MoveCare. La tua privacy è importante per noi. Questa informativa spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando utilizzi la nostra applicazione mobile e il nostro sito web.",
         privacy_2_title: "2. Raccolta delle Informazioni",
         privacy_2_text: "Possiamo raccogliere informazioni su di te in vari modi. Le informazioni che possiamo raccogliere tramite l'App dipendono dal contenuto e dai materiali che utilizzi, e includono:",
-        privacy_2_list: "<li><strong>Dati Personali:</strong> Nome, indirizzo email, e altre informazioni di contatto che ci fornisci volontariamente.</li><li><strong>Dati sulla Salute:</strong> Informazioni relative ai tuoi allenamenti, misure corporee e progressi, necessarie per il funzionamento del servizio di coaching.</li><li><strong>Dati Derivati:</strong> Informazioni che i nostri server raccolgono automaticamente quando accedi all'App, come il tuo indirizzo IP e il tipo di dispositivo.</li>",
-        privacy_3_title: "3. Utilizzo delle Informazioni",
+        privacy_2_list: "<li><strong>Dati Personali:</strong> Nome, indirizzo email, e altre informazioni di contatto che ci fornisci volontariamente.</li><li><strong>Dati sulla Salute:</strong> Informazioni necessarie per il servizio di coaching, tra cui:<ul><li><em>Peso:</em> Utilizzato per inviare check al coach e fornire una panoramica dell'andamento (funzionalità futura).</li><li><em>Passi:</em> Raccolti per monitorare l'attività giornaliera; in futuro verranno aggregati ad altre metriche per fornire analisi sulle performance.</li><li><em>Calorie:</em> Utilizzate per calcolare il fabbisogno residuo in base al piano nutrizionale assegnato dal coach.</li></ul></li><li><strong>Dati Derivati:</strong> Informazioni che i nostri server raccolgono automaticamente quando accedi all'App, come il tipo di dispositivo.</li>",        privacy_3_title: "3. Utilizzo delle Informazioni",
         privacy_3_text: "Avere informazioni accurate su di te ci permette di offrirti un'esperienza fluida, efficiente e personalizzata. Nello specifico, possiamo utilizzare le informazioni raccolte per:",
         privacy_3_list: "<li>Creare e gestire il tuo account.</li><li>Fornirti piani di allenamento e nutrizionali personalizzati.</li><li>Inviarti notifiche sugli aggiornamenti dell'App o sul tuo percorso.</li><li>Migliorare l'efficienza e il funzionamento dell'App.</li>",
         privacy_4_title: "4. Sicurezza dei Dati",
@@ -62,7 +78,7 @@ const translations = {
         privacy_5_title: "5. Conservazione ed Eliminazione dei Dati",
         privacy_5_text_1: "<strong>Conservazione:</strong> I tuoi dati personali e sensibili (allenamenti, foto, chat) vengono conservati sui nostri server sicuri (Firebase) per tutto il tempo in cui il tuo account rimane attivo, al fine di fornirti il servizio.",
         privacy_5_text_2: "<strong>Eliminazione:</strong> Hai il diritto di richiedere la cancellazione completa del tuo account e di tutti i dati associati in qualsiasi momento. Puoi esercitare questo diritto in due modi:",
-        privacy_5_list: "<li><strong>Dall'App:</strong> Accedendo alla sezione <em>Impostazioni > Profilo > Elimina Account</em>. Questa azione è immediata e irreversibile.</li><li><strong>Via Web/Email:</strong> Se non puoi accedere all'app, puoi inviare una richiesta di cancellazione all'indirizzo email di supporto indicato in fondo a questa pagina. Procederemo alla rimozione manuale dei tuoi dati entro 30 giorni dalla richiesta.</li>",
+        privacy_5_list: "<li><strong>Dall'App:</strong> Accedendo alla sezione <em>Impostazioni > Profilo > Elimina Account</em>. Questa azione è immediata e irreversibile.</li><li><strong>Via Web:</strong> Se non puoi accedere all'app, puoi inviare una richiesta di cancellazione effettuando il login su questo sito e richiedere la cancellazione nella sezione profilo. Procederemo alla rimozione dei tuoi dati entro 30 giorni dalla richiesta.</li>",
         privacy_5_text_3: "Una volta completata la procedura di eliminazione, tutti i tuoi dati (inclusi log di accesso, piani di allenamento e immagini caricate) verranno rimossi definitivamente dai nostri database e non potranno essere recuperati.",
         privacy_6_title: "6. Contatti",
         privacy_6_text: "Se hai domande o commenti su questa Privacy Policy, ti preghiamo di contattarci all'indirizzo email: <a href='mailto:movecare.mc@gmail.com'>movecare.mc@gmail.com</a>",
@@ -119,6 +135,23 @@ const translations = {
         feat_create_desc: "Build your exercise library and compose plans quickly and easily.",
         feat_brand: "Grow Your Brand",
         feat_brand_desc: "Share your experience through articles and videos to reach new clients.",
+        
+        // INDEX DETAILS (CLIENT)
+        det_plans_title: "Tailored Plans Details",
+        det_plans_desc: "View your workouts day by day with video tutorials and built-in timers.",
+        det_chat_title: "Integrated Chat",
+        det_chat_desc: "Stay in touch. Send videos of your execution and get immediate corrections.",
+        det_prog_title: "Your Progress",
+        det_prog_desc: "Intuitive charts to monitor weight, body measurements, and lifted loads over time.",
+
+        // INDEX DETAILS (COACH)
+        det_c_clients_title: "Client Dashboard",
+        det_c_clients_desc: "A complete overview of all your athletes with smart notifications.",
+        det_c_plans_title: "Workout Editor",
+        det_c_plans_desc: "Create plans in minutes by dragging exercises from the database.",
+        det_c_brand_title: "Marketing Tools",
+        det_c_brand_desc: "Performance analysis of your profile and social sharing tools.",
+
         footer_rights: "© 2024 MoveCare. All rights reserved.",
         footer_privacy: "Privacy Policy",
         footer_terms: "Terms of Service",
@@ -145,13 +178,12 @@ const translations = {
 
         // PRIVACY POLICY
         privacy_h1: "Privacy Policy",
-        privacy_update: "Last updated: January 02, 2025",
+        privacy_update: "Last updated: January 05, 2025",
         privacy_1_title: "1. Introduction",
         privacy_1_text: "Welcome to MoveCare. Your privacy is important to us. This policy explains how we collect, use, disclose, and protect your information when you use our mobile application and website.",
         privacy_2_title: "2. Information Collection",
         privacy_2_text: "We may collect information about you in various ways. The information we may collect via the App depends on the content and materials you use, and includes:",
-        privacy_2_list: "<li><strong>Personal Data:</strong> Name, email address, and other contact information you voluntarily provide.</li><li><strong>Health Data:</strong> Information regarding your workouts, body measurements, and progress, necessary for the coaching service operation.</li><li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the App, such as your IP address and device type.</li>",
-        privacy_3_title: "3. Use of Information",
+        privacy_2_list: "<li><strong>Personal Data:</strong> Name, email address, and other contact information you voluntarily provide.</li><li><strong>Health Data:</strong> Information necessary for the coaching service, including:<ul><li><em>Weight:</em> Used to send checks to the coach and provide a progress overview (future feature).</li><li><em>Steps:</em> Collected to track daily activity; in the future, they will be aggregated with other metrics to provide performance insights.</li><li><em>Calories:</em> Used to calculate remaining calories based on the nutritional plan assigned by the coach.</li></ul></li><li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the App, such as your device type.</li>",        privacy_3_title: "3. Use of Information",
         privacy_3_text: "Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected to:",
         privacy_3_list: "<li>Create and manage your account.</li><li>Provide personalized workout and nutrition plans.</li><li>Send you notifications about App updates or your journey.</li><li>Improve App efficiency and operation.</li>",
         privacy_4_title: "4. Data Security",
@@ -159,7 +191,7 @@ const translations = {
         privacy_5_title: "5. Data Retention and Deletion",
         privacy_5_text_1: "<strong>Retention:</strong> Your personal and sensitive data (workouts, photos, chats) are stored on our secure servers (Firebase) for as long as your account remains active, in order to provide the service.",
         privacy_5_text_2: "<strong>Deletion:</strong> You have the right to request the complete deletion of your account and all associated data at any time. You can exercise this right in two ways:",
-        privacy_5_list: "<li><strong>In-App:</strong> Accessing <em>Settings > Profile > Delete Account</em>. This action is immediate and irreversible.</li><li><strong>Via Web/Email:</strong> If you cannot access the app, you can send a deletion request to the support email indicated at the bottom of this page. We will proceed with the manual removal of your data within 30 days of the request.</li>",
+        privacy_5_list: "<li><strong>In-App:</strong> Accessing <em>Settings > Profile > Delete Account</em>. This action is immediate and irreversible.</li><li><strong>Via Web:</strong> If you cannot access the app, you can send a deletion request by logging into this website and request an account deletion through the profile page. We will proceed with the removal of your data within 30 days of the request.</li>",
         privacy_5_text_3: "Once the deletion procedure is complete, all your data (including access logs, workout plans, and uploaded images) will be permanently removed from our databases and cannot be recovered.",
         privacy_6_title: "6. Contacts",
         privacy_6_text: "For questions or comments about this Privacy Policy, please contact us at: <a href='mailto:movecare.mc@gmail.com'>movecare.mc@gmail.com</a>",
