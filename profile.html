@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il tuo Profilo - MoveCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="MoveCare Logo">
+            <div class="logo-text">
+                <span class="move">Move</span><span class="care">Care</span>
+            </div>
+        </a>
+        <div class="header-actions">
+            <a href="index.html" class="btn">Torna alla Home</a>
+        </div>
+    </div>
+</header>
+
+<main class="page-content">
+    <div class="container auth-container">
+        <div class="auth-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">👤</div>
+            <h2>Il tuo Profilo</h2>
+
+            <div style="text-align: left; margin: 2rem 0;">
+                <p><strong>Email:</strong> <span id="user-email">Caricamento...</span></p>
+                <p><strong>ID Utente:</strong> <span id="user-uid" style="font-size: 0.8rem; color: #666;">...</span></p>
+            </div>
+
+            <button id="logout-btn" class="auth-btn" style="background-color: #dc3545;">Esci</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>
