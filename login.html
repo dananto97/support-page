@@ -17,8 +17,14 @@
             </div>
         </a>
         <div class="header-actions">
-            <!-- Pulsante Login rimosso qui perché siamo già nella pagina login -->
-            <a href="index.html" class="btn">Torna alla Home</a>
+                <!-- Selettore Lingua -->
+                <select id="lang-selector" class="lang-select">
+                    <option value="it">🇮🇹 IT</option>
+                    <option value="en">🇬🇧 EN</option>
+                </select>
+
+                <!-- Link per tornare alla home -->
+                <a href="index.html" class="btn" data-i18n="nav_download">Torna alla Home</a>
         </div>
     </div>
 </header>
@@ -78,6 +84,9 @@
 
 <!-- Firebase SDKs -->
 <script type="module" src="auth.js"></script>
+
+    <!-- Translation Logic -->
+    <script src="translations.js"></script>
 
 </body>
 </html>
